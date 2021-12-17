@@ -13,11 +13,11 @@ class App extends Component {
     return (
       <div className="App">
         {/* <Contact /> */}
-        <Forum />
+        {/* <Forum /> */}
         {/* <Racing />
         <Basketball /> */}
         {/* <InstaAlbum /> */}
-        {/* <Cover /> */}
+        <Cover />
         {/* <Login /> */}
       </div>
     )

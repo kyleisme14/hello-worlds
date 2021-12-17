@@ -1,5 +1,36 @@
 import React, { Component } from "react";
 
+const comment = {
+	words: 'happy holiday',
+	number: 25
+}
+
+const commentList = [
+	{
+		words: 'happy holiday',
+		number: 10
+	},
+	{
+		words: 'Welcome to 2022',
+		number: 20
+	},
+	{
+		words: 'It is January',
+		number: 30
+	},
+	{
+		words: 'It is Febuary',
+		number: 40
+	}
+]
+
+const displayCommentList = commentList.map((c, idx) => {
+	return(
+			<h1 key={idx}>{c.words}, we hope you use your ${c.number}! We love you!</h1>
+			)
+		})
+
+
 class Cover extends Component {
   render() {
     return (
@@ -17,30 +48,7 @@ class Cover extends Component {
                   <span></span>
                 </span>
               </div>
-              <div id="navbarMenu" className="navbar-menu">
-                <div className="navbar-end">
-                  <div className="tabs is-right">
-                    <ul>
-                      <li className="is-active">
-                        <a>Home</a>
-                      </li>
-                      <li>
-                        <a href="">Examples</a>
-                      </li>
-                      <li>
-                        <a href="">Features</a>
-                      </li>
-                      <li>
-                        <a href="">Team</a>
-                      </li>
-                      <li>
-                        <a href="">Help</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
               </div>
-            </div>
           </nav>
         </div>
         <div className="hero-body">
@@ -48,7 +56,7 @@ class Cover extends Component {
             <div className="columns is-vcentered">
               <div className="column is-5">
                 <figure className="image is-4by3">
-                  <img
+                  <img title='image1'
                     src="https://picsum.photos/800/600/?random"
                     alt="Description"
                   />
@@ -57,19 +65,19 @@ class Cover extends Component {
               <div className="column is-6 is-offset-1">
                 <h1 className="title is-2">Superhero Scaffolding</h1>
                 <h2 className="subtitle is-4">
-                  Let this cover page describe a product or service.
-                </h2>
+                  {comment.number}
+                   </h2>
                 <br />
                 <p className="has-text-centered">
                   <a className="button is-medium is-info is-outlined">
-                    Learn more
+                   {comment.words}
                   </a>
                 </p>
               </div>
             </div>
           </div>
         </div>
-
+        {displayCommentList}
         <div className="hero-foot">
           <div className="container">
             <div className="tabs is-centered">
