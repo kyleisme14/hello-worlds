@@ -2,19 +2,19 @@ import React, { Component } from "react";
 import "./Forum.css";
 import axios from "axios";
 
-class Rocket extends Component {
+class Dragon extends Component {
   constructor(props) {
     super(props);
-    this.state = { rockets: [] };
+    this.state = { dragons: [] };
   }
 
   componentDidMount() {
     axios
-      .get("https://api.spacexdata.com/v4/rockets")
+      .get("https://api.spacexdata.com/v4/dragons")
       .then((response) => {
         // console.log(response.data);
         this.setState({
-          rockets: response.data,
+          dragons: response.data,
         });
       })
       .catch((error) => {
@@ -22,11 +22,11 @@ class Rocket extends Component {
       });
   }
 
-  displayRockets() {
-    let displayRocketList = this.state.rockets.map((r, idx) => {
+  displayDragons() {
+    let displayDragonList = this.state.dragons.map((d, idx) => {
       return (
         <article className="post" key={idx}>
-          <h4>{r.name}</h4>
+          <h4>{d.name}</h4>
           <div className="media">
             <div className="media-left">
               <p className="image is-32x32">
@@ -39,8 +39,8 @@ class Rocket extends Component {
             <div className="media-content">
               <div className="content">
                 <p>
-                <a href={r.wikipedia} target="_blank">View Rocket Wiki</a>
-                  <span className="tag">Rocket</span>
+                  <a href={d.wikipedia} target="_blank">View Dragon Wiki</a>   
+                  <span className="tag">Dragon</span>
                 </p>
               </div>
             </div>
@@ -54,7 +54,7 @@ class Rocket extends Component {
       );
     });
 
-    return displayRocketList;
+    return displayDragonList;
   }
   render() {
     return (
@@ -186,7 +186,7 @@ class Rocket extends Component {
             </div>
             <div className="column is-9">
               <div className="box content">
-                  {this.displayRockets()}
+                  {this.displayDragons()}
               </div>
             </div>
           </div>
@@ -225,4 +225,4 @@ class Rocket extends Component {
   }
 }
 
-export default Rocket;
+export default Dragon;
