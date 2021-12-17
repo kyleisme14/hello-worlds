@@ -51,12 +51,12 @@ class Cover extends Component {
               </div>
           </nav>
         </div>
-        <div className="hero-body">
+        <div  title="image55" className="hero-body">
           <div className="container has-text-centered">
             <div className="columns is-vcentered">
               <div className="column is-5">
                 <figure className="image is-4by3">
-                  <img title='image1'
+                  <img 
                     src="https://picsum.photos/800/600/?random"
                     alt="Description"
                   />
